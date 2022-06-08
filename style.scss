@@ -1,0 +1,346 @@
+$AlmostWhite: hsl(0, 0%, 98%);
+$MediumGray: hsl(0, 0%, 41%);
+$AlmostBlack: hsl(0, 0%, 8%);
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Epilogue';
+    background-color: $AlmostWhite;
+    user-select: none;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    padding: 20px 30px;
+
+    header {
+
+        
+        nav {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                // border: 1px solid black;
+                width: 100%;
+                align-items: center;
+
+                .left,
+                .right {
+                    display: flex;
+                    gap: 50px;
+                    align-items: center;
+                    padding-inline: 20px;
+                    color: $MediumGray;
+                }
+
+                .left {
+                    padding-left: 50px;
+
+                    .company {
+                        position: relative;
+
+                        .extra-company {
+                            width: 130px;
+                            padding-inline: 20px;
+                            padding-block: 20px;
+                            border-radius: 15px;
+                            box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+                            line-height: 25px;
+                            background-color: white;
+                            position: absolute;
+                            display: block;
+                            top: 100%;
+                            display: none;
+                        }
+
+                        .showExtraCompany {
+                            display: block;
+                        }
+                    }
+
+                    .feature {
+                        position: relative;
+
+                        .extra-feature {
+                            display: none;
+                            width: 150px;
+                            padding-inline: 20px;
+                            padding-block: 20px;
+                            border-radius: 15px;
+                            box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+                            line-height: 25px;
+                            background-color: white;
+                            position: absolute;
+                            top: 100%;
+
+                            img {
+                                padding-right: 10px;
+                            }
+                        }
+
+                        .showExtraFeature {
+                            display: block;
+                        }
+                    }
+                }
+
+                .reg {
+                    border: 2px solid $MediumGray;
+                    padding: 10px 10px;
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+
+    .hero {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding-inline: 80px;
+        height: 100%;
+
+        .top-right {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 70%;
+            }
+        }
+
+        .left-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            height: 100%;
+            gap: 20px;
+
+            .title {
+                font-size: 5rem;
+                font-weight: 700;
+                color: $AlmostBlack;
+            }
+
+            .desc {
+                font-size: 1.4rem;
+                line-height: 30px;
+                font-weight: 300;
+                color: $MediumGray;
+            }
+
+            button {
+                background-color: $AlmostBlack;
+                color: white;
+                width: 130px;
+                border: none;
+                outline: none;
+                padding: 15px;
+                border-radius: 15px;
+                font-family: 'Epilogue';
+                font-weight: 700;
+                letter-spacing: .4px;
+                transition: 0.5s;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        color: black;
+    }
+}
+
+.burger {
+    color: $MediumGray;
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+.attribution {
+    font-size: 11px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10;
+    width: max-content;
+    color: gray;
+    font-size: 10px;
+    a{
+        color: gray;
+        font-weight: 600;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .container {
+        padding-inline: 0;
+
+        header {
+            padding-inline: 10px;
+
+            nav {
+                justify-content: space-between;
+                position: relative;
+                height: 100%;
+                
+                .ul {
+                    visibility: hidden;
+                    pointer-events: none;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 70%;
+                    background-color: white;
+                    padding-bottom: 400px;
+                    height: 100vh;
+                    padding-top: 100px;
+                    box-shadow: 0 0 0 10px 10px rgba(0, 0, 0, 0.2);
+                    .left {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        width: 100%;
+                        gap: 10px;
+                        .company {
+                            .extra-company {
+                                display: none;
+                            }
+                            .showExtraCompany{
+                                display: block; 
+                            }
+                        }
+
+                        .feature {
+                            .extra-feature {
+                                display: none;
+                            }
+
+                            .showExtraFeature {
+                                display: block;
+                                z-index: 9;
+                            }
+                        }
+                    }
+
+                    .right {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        padding-top: 50px;
+                        .reg{
+                            padding-inline: 80px;
+                        }
+                    }
+                }
+
+                .showUl{
+                    pointer-events: all;
+                    visibility: visible;
+                    box-shadow: 0 0 500px 30px black;
+                }
+            }
+        }
+
+        .hero {
+            flex-direction: column;
+            padding-block: 50px;
+            margin-bottom: 100px;
+
+            .top-right {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 150%;
+                }
+            }
+
+            .left-bottom {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 150%;
+                gap: 20px;
+                padding-top: 100px;
+                .title {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    color: $AlmostBlack;
+                    text-align: center;
+                }
+
+                .desc {
+                    font-size: 1rem;
+                    line-height: 30px;
+                    font-weight: 300;
+                    color: $MediumGray;
+                    text-align: center;
+                }
+
+                button {
+                    background-color: $AlmostBlack;
+                    color: white;
+                    width: 130px;
+                    border: none;
+                    outline: none;
+                    padding: 15px;
+                    border-radius: 15px;
+                    font-family: 'Epilogue';
+                    font-weight: 700;
+                    letter-spacing: .4px;
+                    transition: 0.5s;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .burger {
+        display: block;
+        z-index: 99;
+        padding: 10px;
+    }
+
+    .attribution{
+        position: absolute;
+        bottom: -240px;
+        padding-bottom: 10px;
+    }
+}
+
+
